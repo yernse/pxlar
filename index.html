@@ -1,3 +1,82 @@
-<html>
-  caca poopoo
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home Menu</title>
+<style>
+  /* Style for the tabs */
+  .tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+  }
+
+  /* Style for the buttons inside the tabs */
+  .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+  }
+
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #ddd;
+  }
+
+  /* Create an active/current tablink class */
+  .tab button.active {
+    background-color: #ccc;
+  }
+</style>
+</head>
+<body>
+
+<div class="tab">
+  <button class="tablinks" onclick="openPage('Games')">Games</button>
+  <button class="tablinks" onclick="openPage('Home')">Home</button>
+  <button class="tablinks" onclick="openPage('Fortnite')">Fortnite</button>
+</div>
+
+<script>
+function openPage(pageName) {
+  // Redirect to Rick Roll video
+  window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+}
+</script>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galaxy Background</title>
+<style>
+  /* Style to make the background cover the entire page */
+  html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+  }
+  
+  /* Style to position the GIF in the background */
+  body {
+    background-image: url('https://media.giphy.com/media/26BkNrGhyFIVmgUkI/giphy.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+</style>
+</head>
+<body>
+</body>
 </html>
