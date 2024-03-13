@@ -8,15 +8,15 @@
   /* Style for the tabs */
   .tab {
     overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
+    border: none; /* Removed border */
+    background-color: transparent; /* Made background transparent */
     position: relative; /* Add position relative to contain video */
     z-index: 1; /* Ensure tabs are on top of the video */
   }
 
   /* Style for the buttons inside the tabs */
   .tab button {
-    background-color: inherit;
+    background-color: transparent; /* Made background transparent */
     float: left;
     border: none;
     outline: none;
@@ -24,16 +24,22 @@
     padding: 14px 16px;
     transition: 0.3s;
     font-size: 17px;
+    color: #fff; /* Changed text color to white */
+    text-transform: uppercase; /* Uppercase text */
+    font-weight: bold; /* Bold text */
+    border-radius: 30px; /* Adjusted border-radius */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.08); /* Added subtle box shadow */
+    background-image: linear-gradient(to right, #800080, #ff00ff); /* Added gradient background */
   }
 
   /* Change background color of buttons on hover */
   .tab button:hover {
-    background-color: #ddd;
+    background-color: rgba(128,0,128,0.8); /* Changed hover background color */
   }
 
   /* Create an active/current tablink class */
   .tab button.active {
-    background-color: #ccc;
+    background-color: rgba(128,0,128,1); /* Changed active background color */
   }
 
   /* Style to make the background cover the entire page */
@@ -76,8 +82,8 @@
 
 <div class="tab">
   <button class="tablinks" onclick="openPage('Games')">Games</button>
-  <button class="tablinks" onclick="openPage('Home')">Home</button>
-  <button class="tablinks" onclick="openPage('Fortnite')">Fortnite</button>
+  <button class="tablinks" onclick="openPage('Apps')">Apps</button>
+    <button class="tablinks" onclick="openPage('Proxies')">Proxies</button>
 </div>
 
 <!-- Video element for browsers that support it -->
@@ -89,11 +95,11 @@
 <script>
 function openPage(pageName) {
   if (pageName === 'Games') {
-    window.location.href = "https://www.example.com/games";
-  } else if (pageName === 'Home') {
-    window.location.href = "https://www.example.com/home";
-  } else if (pageName === 'Fortnite') {
-    window.location.href = "https://www.example.com/fortnite";
+    window.location.href = "https://www.games.com";
+  } else if (pageName === 'Apps') {
+    window.location.href = "https://www.thisguygothitbyashotgun.com
+  } else if (pageName === 'Proxies
+    window.location.href = "https://www.youtube.com/watch?v=WvMYwx6Xdzk";
   }
 }
 </script>
