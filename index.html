@@ -33,30 +33,7 @@
   .tab button.active {
     background-color: #ccc;
   }
-</style>
-</head>
-<body>
 
-<div class="tab">
-  <button class="tablinks" onclick="openPage('Games')">Games</button>
-  <button class="tablinks" onclick="openPage('Home')">Home</button>
-  <button class="tablinks" onclick="openPage('Fortnite')">Fortnite</button>
-</div>
-
-<script>
-function openPage(pageName) {
-  // Redirect to Rick Roll video
-  window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
-}
-</script>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Galaxy Background</title>
-<style>
   /* Style to make the background cover the entire page */
   html, body {
     height: 100%;
@@ -81,10 +58,30 @@ function openPage(pageName) {
 </style>
 </head>
 <body>
-  <!-- Video element for browsers that support it -->
-  <video autoplay loop muted>
-    <source src="https://www.example.com/path/to/video.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+
+<div class="tab">
+  <button class="tablinks" onclick="openPage('Games')">Games</button>
+  <button class="tablinks" onclick="openPage('Home')">Home</button>
+  <button class="tablinks" onclick="openPage('Fortnite')">Fortnite</button>
+</div>
+
+<!-- Video element for browsers that support it -->
+<video autoplay loop muted>
+  <source src="https://www.example.com/path/to/video.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+<script>
+function openPage(pageName) {
+  if (pageName === 'Games') {
+    window.location.href = "https://www.example.com/games";
+  } else if (pageName === 'Home') {
+    window.location.href = "https://www.example.com/home";
+  } else if (pageName === 'Fortnite') {
+    window.location.href = "https://www.example.com/fortnite";
+  }
+}
+</script>
+
 </body>
 </html>
