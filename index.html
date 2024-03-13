@@ -10,6 +10,8 @@
     overflow: hidden;
     border: 1px solid #ccc;
     background-color: #f1f1f1;
+    position: relative; /* Add position relative to contain video */
+    z-index: 1; /* Ensure tabs are on top of the video */
   }
 
   /* Style for the buttons inside the tabs */
@@ -49,11 +51,24 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
+    height: 100%; /* Ensure video fills entire viewport */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
-  /* Hide the video element */
+  /* Ensure video fills entire viewport */
   video {
-    display: none;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1; /* Send video to the back */
   }
 </style>
 </head>
