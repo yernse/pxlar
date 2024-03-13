@@ -50,10 +50,6 @@ function openPage(pageName) {
 }
 </script>
 
-</body>
-</html>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -68,15 +64,27 @@ function openPage(pageName) {
     overflow: hidden;
   }
   
-  /* Style to position the GIF in the background */
+  /* Style to position the video in the background */
   body {
-    background-image: url('https://media.giphy.com/media/26BkNrGhyFIVmgUkI/giphy.gif');
+    background: #000; /* Fallback color */
+    background-image: url('https://pxlar.vercel.app/pexels-rostislav-uzunov-5453622_2160p.mp4');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-position: center;
+  }
+
+  /* Hide the video element */
+  video {
+    display: none;
   }
 </style>
 </head>
 <body>
+  <!-- Video element for browsers that support it -->
+  <video autoplay loop muted>
+    <source src="https://www.example.com/path/to/video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 </body>
 </html>
