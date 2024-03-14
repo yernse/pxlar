@@ -9,24 +9,34 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #000;
-    background-image: url('https://pxlar.vercel.app/pexels-rostislav-uzunov-5453622_2160p.mp4');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+}
+
+.background-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
 }
 
 .container {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 20px;
     padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.08);
 }
 
 h1 {
     text-align: center;
-    color: #fff;
+    color: #333;
 }
 
 .games-container {
@@ -36,10 +46,9 @@ h1 {
 }
 
 .game {
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
     padding: 20px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.08);
+    border-radius: 10px;
+    background-color: #fff;
     transition: transform 0.3s ease;
 }
 
@@ -75,6 +84,11 @@ h1 {
 </style>
 </head>
 <body>
+
+<video class="background-video" autoplay loop muted>
+  <source src="https://pxlar.vercel.app/pexels-rostislav-uzunov-5453622_2160p.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 <div class="container">
     <h1>Games</h1>
