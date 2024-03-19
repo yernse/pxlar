@@ -52,7 +52,6 @@
   /* Style to position the video in the background */
   body {
     background: #000; /* Fallback color */
-    background-image: url('https://pxlar.vercel.app/Untitled video - Made with Clipchamp (1).mp4');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -83,63 +82,38 @@
     position: absolute;
     top: 40%;
     transform: translateY(-50%);
-    color: rgba(255, 255, 255, 0.8); /* White with some transparency */
+    color: #ff007f; /* Pink color */
     font-size: 60px;
     text-align: center;
     width: 100%;
     text-transform: uppercase; /* Uppercase text */
     letter-spacing: 2px; /* Added letter spacing */
     font-family: 'Rubik', sans-serif; /* Added font family */
-    overflow: hidden;
+    text-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f, 0 0 30px #ff007f, 0 0 40px #ff007f, 0 0 50px #ff007f, 0 0 60px #ff007f, 0 0 70px #ff007f; /* Added glowing effect */
   }
 
-  .pxlarized-text:before,
-  .pxlarized-text:after {
-    content: attr(data-text);
+  /* Style for tabs container */
+  .tab {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    color: #8000FF; /* Brighter purple color */
-    overflow: hidden;
+    top: 10px;
+    left: 10px;
   }
 
-  .pxlarized-text:before {
-    left: 2px;
-    text-shadow: -2px 0 #fff; /* White shadow */
-    animation: glitch-anim 2s infinite linear alternate-reverse;
-  }
-
-  .pxlarized-text:after {
-    left: -2px;
-    text-shadow: 2px 0 #fff; /* White shadow */
-    animation: glitch-anim 3s infinite linear alternate-reverse;
-  }
-
-  @keyframes glitch-anim {
-    0% {
-      transform: translate(0);
-    }
-    25% {
-      transform: translate(-5px, -5px);
-    }
-    50% {
-      transform: translate(5px, 5px);
-    }
-    75% {
-      transform: translate(-5px, 5px);
-    }
-    100% {
-      transform: translate(5px, -5px);
-    }
+  /* Style for loading message */
+  #loading-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 24px;
   }
 </style>
 </head>
 <body>
 
 <!-- Text: "Pxlarized" -->
-<div class="pxlarized-text" data-text="Pxlarized">Pxlarized</div>
+<div class="pxlarized-text">Pxlarized</div>
 
 <div class="tab">
   <button class="tablinks" onclick="openPage('Games')">Games</button>
@@ -147,13 +121,41 @@
   <button class="tablinks" onclick="openPage('Proxies')">Proxies</button>
 </div>
 
+<!-- Just wait message -->
+<div id="loading-message" style="display: none;">
+  Just wait, might take 30 seconds or so...
+</div>
+
 <!-- Video element for browsers that support it -->
-<video autoplay loop muted>
+<video id="background-video" loop muted style="display: none;">
   <source src="https://pxlar.vercel.app/Untitled video - Made with Clipchamp (1).mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
 <script>
+document.addEventListener("DOMContentLoaded", function() {
+  var video = document.getElementById("background-video");
+  var loadingMessage = document.getElementById("loading-message");
+  var pxlarizedText = document.querySelector(".pxlarized-text");
+  
+  // Hide the loading message initially
+  loadingMessage.style.display = "none";
+  
+  // Show loading message while video is loading
+  video.addEventListener("loadeddata", function() {
+    // Video loaded, hide loading message and display video
+    loadingMessage.style.display = "none";
+    video.style.display = "block";
+  });
+  
+  // If video takes too long to load, show loading message
+  setTimeout(function() {
+    if (video.readyState !== 4) { // 4 means video is fully loaded
+      loadingMessage.style.display = "block";
+    }
+  }, 30000); // 30 seconds timeout
+});
+
 function openPage(pageName) {
   if (pageName === 'Games') {
     window.location.href = "/games.html";
