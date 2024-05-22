@@ -185,7 +185,21 @@ button:hover {
 .gallery a:hover {
   transition: all .2s ease-in-out; 
   border-radius: 25px;
-  transform: scale(1.1);
+  transform: scale(0.9);
+  box-shadow: 0 0 10px #ff00ea, 0 0 20px #ff00ea, 0 0 30px #ff00ea; 
+
+  .gallery a::before {
+    content: "Partner";
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ff00ea;
+    font-weight: bold;
+    font-size: 1.5em;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-shadow: 0 0 10px #ff00ea, 0 0 20px #ff00ea, 0 0 30px #ff00ea;
 }
 #particles-js{
   width: 100%;
